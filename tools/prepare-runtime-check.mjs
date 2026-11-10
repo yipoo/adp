@@ -1,0 +1,9 @@
+import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {build,transform} from 'esbuild';
+import {parse,compileScript} from '@vue/compiler-sfc';
+const root=new URL('../',import.meta.url);const out=new URL('../qa-runtime/',import.meta.url);await mkdir(out,{recursive:true});
+await writeFile(new URL('react-entry.jsx',out),`import React from 'react';import {createRoot} from 'react-dom/client';import AgentChat from '../sources/agent-chat/en/AgentChat.jsx';import AgentWorkflow from '../sources/agent-workflow/en/AgentWorkflow.jsx';createRoot(document.getElementById('root')).render(<div><AgentChat/><AgentWorkflow/></div>);`);
+await build({entryPoints:[new URL('react-entry.jsx',out).pathname],bundle:true,outfile:new URL('react.js',out).pathname,jsx:'automatic',define:{'process.env.NODE_ENV':'"development"'}});
+const vueSource=await readFile(new URL('../sources/agent-chat/zh/AgentChat.vue',import.meta.url),'utf8');const {descriptor}=parse(vueSource,{filename:'AgentChat.vue'});const compiled=compileScript(descriptor,{id:'adp-runtime',inlineTemplate:true});await writeFile(new URL('vue-component.js',out),compiled.content);await writeFile(new URL('vue-entry.js',out),`import {createApp} from 'vue';import App from './vue-component.js';createApp(App).mount('#root');`);await build({entryPoints:[new URL('vue-entry.js',out).pathname],bundle:true,outfile:new URL('vue.js',out).pathname});
+for(const type of ['react','vue'])await writeFile(new URL(type+'.html',out),`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">${type==='vue'?'<style>'+descriptor.styles[0].content+'</style>':''}</head><body style="margin:0"><div id="root"></div><script type="module" src="./${type}.js"></script></body></html>`);
+console.log('Prepared native React and Vue runtime fixtures.');

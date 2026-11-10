@@ -1,0 +1,21 @@
+{
+  "name": "adp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "check": "node --check src/app.js && node --check src/demos.js && node --check src/agent-templates.js && node --check src/locale.js && node --check src/preview.js && node tools/verify.mjs && node tools/check-sources.mjs",
+    "generate:sources": "node tools/generate-sources.mjs",
+    "prepare:runtime": "node tools/prepare-runtime-check.mjs"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.5.45",
+    "esbuild": "^0.28.2",
+    "postcss": "^8.5.32",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vue": "^3.5.45"
+  },
+  "description": "Prompt for Agents Design \u2014 bilingual Agent templates, prompts, and multi-framework source"
+}
