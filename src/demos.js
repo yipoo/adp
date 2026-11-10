@@ -1,3 +1,4 @@
+import {timelineParts} from './agent-timeline.js';
 import {translate} from './locale.js';
 import {agentMarkup,agentStyles,agentBehavior} from './agent-templates.js';
 // All previews are original implementations, isolated in sandboxed documents.
@@ -47,6 +48,7 @@ case 'ai-template':return `<div class="canvas">${nav}<div class="canvas-side"><a
 return `<div class="canvas">${nav}<div class="canvas-body">${body}</div></div>`;
 }
 export function demoParts(item,{hero=false,lang='en'}={}){
+if(item.demo.startsWith('timeline:')){const p=timelineParts(item.demo.slice(9),lang);return {...p,css:style+p.css+`body{--bg:${item.background||'#f5f5f2'}}`};}
 const agent=item.demo.startsWith('agent:');
 const raw=agent?agentMarkup(item.demo.slice(6),lang):(demos[item.demo]||composition(item.demo));
 let html=agent?raw:translate(raw,lang);

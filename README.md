@@ -4,7 +4,7 @@
 
 为 AI Agent 产品设计的可交互 UI、完整页面模板、设计 prompt 和多框架源码库。
 
-**23 项设计 · 5 套 Agent 模板 · 中英文 · Next.js / React、Vue 3、HTML**
+**33 项设计 · 5 套 Agent 模板 · 中英文 · Next.js / React、Vue 3、HTML**
 
 ## 本地运行
 
@@ -18,13 +18,19 @@ npm run dev
 
 | 类型 | 数量 | 内容 |
 | --- | --- | --- |
-| Components | 12 | 输入框、模型与推理深度、波形、图表、文件选择、编辑历史、菜单、文字切换、任务排序、光环、进度环、差异审阅 |
-| Blocks | 6 | Agent 工作台、数据概览、内容审阅、项目规划、方案对比、品牌首屏 |
+| Components | 20 | 原有 12 项，以及工具调用、计划队列、操作审批、来源引用、子任务、重试、检查点、上下文用量 |
+| Blocks | 8 | Agent 工作台、数据概览、内容审阅、项目规划、方案对比、品牌首屏、Agent 执行时间线、耗时瀑布图 |
 | Templates | 5 | Agent 对话、深度研究、工作流控制台、人工审批、知识库 |
 
 模板是带有导航、项目、页头、主内容、上下文、交互反馈的页面。桌面三栏；平板收起上下文；手机使用单列和可开关的导航、上下文抽屉。所有模板默认完整展示，可以打开独立预览并切换 Desktop 1440 / Tablet 768 / Mobile 390。
 
 Free 包含全部 demo、设备预览、搜索、收藏，以及 Free 条目的 prompt 和三框架源码。Lifetime 开放全部在线 Pro prompt / 源码、批量管理和完整打包下载。已公开的 GitHub 版本继续免费。ADP Lifetime 为 **$29.90 美元一次付费**，提供完整双语源码包的便捷下载，已下载版本永久可用，后续打包更新在产品持续维护期间提供。网站通过 Vercel 部署至 https://adp.yipoo.com ，账号与付款说明见 [billing/README.md](billing/README.md)。当前为 Stripe 测试环境，不收取真实款项。
+
+## Agent Timeline
+
+在 Components 或 Blocks 中选择 **Agent Timeline** 分类。新增 10 项均为 Free，提供中英文交互演示、设计 prompt 和 React / Vue / HTML 源码。详情页附公开交互参考链接；来源、收录范围及验证说明见 [Agent Timeline 参考说明](docs/agent-timeline-references.md)。
+
+这些组件展示可观察的任务事件与公开摘要。推进、审批、重试、压缩和恢复仅影响本地预览；真实运行与持久化由接入方服务负责。
 
 ## 中英文
 
@@ -43,7 +49,7 @@ Free 包含全部 demo、设备预览、搜索、收藏，以及 Free 条目的 
 | Vue 3 | `.vue` | 复制到现有 Vue 项目中，直接导入组件 |
 | HTML / CSS / JS | `index.html` | 独立文件，可直接打开 |
 
-源文件位于 `sources/<id>/<en|zh>/`。23 项 × 2 种语言 × 3 种实现，共 138 个文件。每个文件包含布局、样式和交互实现；React 使用 JSX、`useRef` / `useEffect`，Vue 使用原生 template、`script setup` 及生命周期清理；不会把整个 demo 塞进 iframe，也不使用运行时 eval。
+源文件位于 `sources/<id>/<en|zh>/`。33 项 × 2 种语言 × 3 种实现，共 198 个文件。每个文件包含布局、样式和交互实现；React 使用 JSX、`useRef` / `useEffect`，Vue 使用原生 template、`script setup` 及生命周期清理；不会把整个 demo 塞进 iframe，也不使用运行时 eval。
 
 源码不依赖外部字体、图片、CDN 或 UI 库。样式按设计 id 隔离，可与 Tailwind CSS、shadcn/ui 项目共存；目前不是单独的 shadcn registry 或 Tailwind 专用导出。复制到使用 Tailwind Preflight 的项目后，仍应结合项目样式做集成验收。
 
@@ -96,6 +102,7 @@ npm run prepare:runtime
 - `src/locale.js`：界面与原有组件演示的语言资源。
 - `src/demos.js`：演示组装与组件实现。
 - `src/agent-templates.js`：五套 Agent 页面及交互。
+- `src/agent-timeline.js`：10 项时间线相关组件与区块的双语演示、样式和状态交互。
 - `src/preview.js`：独立全页预览、设备宽度与页面导航。
 - `sources/`：可直接复制、下载的双语源文件。
 - `tools/generate-sources.mjs`：从同一实现生成三框架源码；`tools/check-sources.mjs` 校验编译。

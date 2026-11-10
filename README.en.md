@@ -4,7 +4,7 @@ English · [简体中文](README.md)
 
 An interactive design library for AI Agent products: considered components, complete application templates, design prompts, and copyable source.
 
-**23 designs · 5 Agent templates · English & Chinese · Next.js / React, Vue 3, HTML**
+**33 designs · 5 Agent templates · English & Chinese · Next.js / React, Vue 3, HTML**
 
 ## Run locally
 
@@ -16,13 +16,19 @@ Open http://127.0.0.1:4180 . Node.js 22+; no installation or AI credentials need
 
 ## Library
 
-- **12 Components:** composer, model / reasoning controls, waveform, chart, file picker, edit history, popup, phrase switching, sortable checklist, halo, progress ring, and diff review.
-- **6 Blocks:** agent workspace, analytics, content review, project planning, pricing, and hero.
+- **20 Components:** the original 12, plus tool calls, plan queue, approval gate, citations, subagent tasks, error recovery, checkpoints, and context usage.
+- **8 Blocks:** agent workspace, analytics, content review, project planning, pricing, hero, Agent execution timeline, and trace waterfall.
 - **5 Templates:** conversations, research, workflow console, human-in-the-loop approvals, and knowledge workspace.
 
 Agent templates include navigation, projects, a header, primary content, context, and working local interactions. Desktop uses three columns; tablet collapses context; mobile uses a main column with navigation and context drawers. Open the full preview or select Desktop 1440 / Tablet 768 / Mobile 390.
 
 Free includes demos, responsive previews, search, favorites, and Free-design prompts / source. Lifetime unlocks all online Pro exports, bulk prompt management, and the complete bundle. Previously published GitHub versions remain free. **ADP Lifetime costs USD 29.90 once**, for convenient access to the complete bilingual source bundle. Keep downloaded versions permanently; packaged updates are provided while the product is actively maintained. Deployed at https://adp.yipoo.com . See [billing documentation](billing/README.md). Stripe is currently in test mode: no real payments are collected.
+
+## Agent Timeline
+
+Select **Agent Timeline** under Components or Blocks. The 10 new Free designs include bilingual demos, prompts, and React / Vue / HTML source. Their detail pages include public interaction references; see [scope, sources, and validation](docs/agent-timeline-references.md).
+
+These patterns display observable events and public task summaries. Advancement, approval, retry, compaction and restoration affect only local preview state. Connect application services for real execution and persistence.
 
 ## English & Chinese
 
@@ -38,7 +44,7 @@ Open a design → **Source code** → select a framework → copy or download:
 | Vue 3 | `.vue` | Import the single-file component into an existing Vue project |
 | HTML / CSS / JS | `index.html` | Open the self-contained file directly |
 
-All 138 files live under `sources/<id>/<en|zh>/`. They contain markup, CSS, and working behavior. React uses JSX and lifecycle-managed DOM interactions; Vue uses a native template and script setup. No iframe wrappers or runtime eval in the framework exports. Listeners and timers are cleaned up when unmounted.
+All 198 files live under `sources/<id>/<en|zh>/`. They contain markup, CSS, and working behavior. React uses JSX and lifecycle-managed DOM interactions; Vue uses a native template and script setup. No iframe wrappers or runtime eval in the framework exports. Listeners and timers are cleaned up when unmounted.
 
 The source has no external font, image, CDN, or UI-library dependencies. Styles are namespaced per design and can coexist with Tailwind CSS and shadcn/ui. These are not Tailwind-specific exports or a shadcn registry. Check integration against your project's existing resets and design system.
 

@@ -11,3 +11,5 @@ html[lang=en] .type-tabs button>span{display:none}
 
 /* ADP identity: prompt chevron flows into interface panels. */
 .brand-icon{display:block;width:32px;height:32px;flex-shrink:0}footer .brand-icon{width:26px;height:26px}
+
+.detail-references{margin-top:22px;font-size:12px}.detail-references a{display:block;margin:8px 0;color:var(--accent,#4058f4);text-underline-offset:3px;overflow-wrap:anywhere}
