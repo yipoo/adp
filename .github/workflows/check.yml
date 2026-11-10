@@ -15,4 +15,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm ci --prefix billing
       - run: npm run check
+      - run: npm run test:billing
+      - run: npm run build:vercel
+      - run: node tools/verify-static.mjs

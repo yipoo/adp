@@ -2,3 +2,10 @@ node_modules/
 .DS_Store
 qa-runtime/
 .oil-ui/
+billing/.env
+billing/node_modules/
+.vercel/
+.env*
+!*.env.example
+private/
+.vercel

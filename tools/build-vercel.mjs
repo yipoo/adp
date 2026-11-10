@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import {build} from 'esbuild';
+const output='.vercel/output';fs.rmSync(output,{recursive:true,force:true});fs.mkdirSync(output+'/static',{recursive:true});
+for(const file of ['index.html','preview.html','account.html'])fs.copyFileSync(file,output+'/static/'+file);
+for(const dir of ['src','assets'])fs.cpSync(dir,output+'/static/'+dir,{recursive:true});
+const catalog=JSON.parse(fs.readFileSync('data/catalog.json','utf8'));
+fs.mkdirSync(output+'/static/data',{recursive:true});fs.writeFileSync(output+'/static/data/catalog.json',JSON.stringify(catalog.map(item=>item.tier==='pro'?{...item,prompt:'',promptEn:''}:item)));
+fs.mkdirSync(output+'/static/sources',{recursive:true});for(const item of catalog.filter(x=>x.tier==='free'))fs.cpSync('sources/'+item.id,output+'/static/sources/'+item.id,{recursive:true});
+await build({entryPoints:['billing/web/auth-client.mjs'],outfile:output+'/static/src/auth-client.js',bundle:true,format:'esm',platform:'browser',minify:true});
+fs.rmSync(output+'/static/src/account.js',{force:true});
+await build({entryPoints:['billing/web/account.mjs'],outfile:output+'/static/src/account.js',bundle:true,format:'esm',platform:'browser',minify:true});
+const fn=output+'/functions/api/billing.func';fs.mkdirSync(fn,{recursive:true});fs.cpSync('billing/certs',fn+'/certs',{recursive:true});fs.cpSync('sources',fn+'/resources',{recursive:true});
+await build({entryPoints:['billing/vercel.mjs'],outfile:fn+'/index.mjs',bundle:true,format:'esm',platform:'node',target:'node24',banner:{js:"import {createRequire as _createRequire} from 'node:module';const require=_createRequire(import.meta.url);"},external:['pg-native']});
+fs.writeFileSync(fn+'/.vc-config.json',JSON.stringify({runtime:'nodejs24.x',handler:'index.mjs',launcherType:'Nodejs',maxDuration:60}));
+fs.writeFileSync(output+'/config.json',JSON.stringify({version:3,regions:['sin1'],routes:[{src:'/api/billing(?:/(.*))?',dest:'/api/billing?__route=$1'},{handle:'filesystem'},{src:'/',dest:'/index.html'}]}));
+console.log('Built ADP static site, bundled account client, and isolated Node billing function.');

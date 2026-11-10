@@ -22,7 +22,7 @@ Open http://127.0.0.1:4180 . Node.js 22+; no installation or AI credentials need
 
 Agent templates include navigation, projects, a header, primary content, context, and working local interactions. Desktop uses three columns; tablet collapses context; mobile uses a main column with navigation and context drawers. Open the full preview or select Desktop 1440 / Tablet 768 / Mobile 390.
 
-Free / Pro are content tiers. This edition includes all previews, prompts, and source. Accounts, payments, and server-side entitlements are not connected.
+Free includes demos, responsive previews, search, favorites, and Free-design prompts / source. Lifetime unlocks all online Pro exports, bulk prompt management, and the complete bundle. Previously published GitHub versions remain free. **ADP Lifetime costs USD 29.90 once**, for convenient access to the complete bilingual source bundle. Keep downloaded versions permanently; packaged updates are provided while the product is actively maintained. Deployed at https://adp.yipoo.com . See [billing documentation](billing/README.md). Stripe is currently in test mode: no real payments are collected.
 
 ## English & Chinese
 
@@ -63,7 +63,7 @@ Edits, saved designs, language, and theme persist in the current browser. Update
 
 AI responses, research content, workflow runs, and approval decisions are local UI interactions. No model calls, tool execution, publishing, project writes, or email sending occur. Files show metadata only; they are not uploaded, parsed, or indexed. Knowledge content previews are built in. “Share brief” downloads a local text file. The waveform has no recording or audio output.
 
-Connect your own model, streaming responses, persistent data, file storage, identity, payment, and authorization services.
+Templates still need your own application services. The ADP website itself connects Supabase Auth, isolated billing data, private bundle storage, and Stripe sandbox Lifetime checkout.
 
 ## Develop and validate
 

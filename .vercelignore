@@ -1,0 +1,8 @@
+.git
+.oil-ui
+node_modules
+billing/node_modules
+billing/.env
+.env*
+qa-runtime
+private

@@ -1,4 +1,10 @@
 export const phrases={
+'Free 与 Pro 表示内容分级，现有公开源码继续免费。Lifetime 为 $29.90 一次付费，解锁全部 Pro 资源、批量工具与完整源码包；目前使用测试支付，不收取真实款项。':'Free and Pro are content tiers; existing public source stays free. Lifetime is USD 29.90 once for all Pro resources, bulk tools, and the complete source bundle. Payments are currently test-only; no real money is charged.',
+
+'全部 Pro prompt、组件与 Agent 模板源码':'All Pro prompts, components & Agent template source','批量 prompt 管理与完整双语源码包':'Bulk prompt tools & complete bilingual source bundle','解锁全部 Pro 资源与工具，永久使用已下载版本。':'Unlock every Pro resource and tool. Keep downloaded versions forever.','一次付费，让好设计一直在手边。':'One payment. Good design, yours to keep.','完整中英文源码包，永久使用已下载版本。':'The complete bilingual source bundle. Keep your downloaded version forever.','无自动续费':'No auto-renewal','Lifetime 永久版':'ADP Lifetime','一次付费':'one-time payment','永久权益，无月费或年费。':'Lifetime access. No monthly or annual fees.','持续维护期间的新增打包版本':'New packaged releases while actively maintained','开通 Lifetime':'Get Lifetime',
+
+'Pro 订阅':'Pro membership','给下一个 Agent，多一点可能。':'More room for your next Agent.','支持持续维护，一键获取完整双语源码包。':'Support ongoing development. Get the complete bilingual source bundle.','Pro 月付':'Pro monthly','Pro 年付':'Pro yearly','/ 月':'/ month','/ 年':'/ year','按月扣费，随时可取消续费。':'Billed monthly. Cancel renewal any time.','完整中英文源码包，一键下载':'Complete EN / 中文 source bundle','订阅有效期内新增的打包版本':'New packaged releases while subscribed','选择月付':'Choose monthly','选择年付':'Choose yearly','节省 31%':'Save 31%','折合每月 $8.25，按年扣费':'$8.25 / month, billed yearly','测试环境，不收取真实款项。现有公开源码继续免费。':'Test environment. No real payments. Existing public source stays free.',
+
 'ADP 首页':'ADP home','智能输入框实时体验':'Live prompt composer',
 '好界面，':'Thoughtful interfaces.', '从好 ':'Built from a better ', ' 开始。':' prompt.',
 '先体验，再创造。精选可交互的组件、区块与模板，':'Explore, interact, and build. Components, blocks, and complete Agent templates.',

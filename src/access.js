@@ -1,0 +1,8 @@
+// Public client: only publishable auth configuration is used here.
+const listeners=new Set();let auth,user=null,paid=false;
+export const membership={get user(){return user},get paid(){return paid},ready:null,onChange(fn){listeners.add(fn);return()=>listeners.delete(fn)}};
+async function announce(){for(const fn of listeners)fn()}
+async function refresh(){if(!user){paid=false;await announce();return}try{const data=await memberRequest('/entitlements');paid=!!data.pro&&!data.reviewRequired}catch{paid=false}await announce()}
+export async function memberRequest(path,options={}){if(!auth)throw Error('Lifetime sign-in required');const {data}=await auth.auth.getSession();if(!data.session)throw Error('Lifetime sign-in required');const response=await fetch('/api/billing'+path,{...options,headers:{Authorization:'Bearer '+data.session.access_token,...options.headers}});if(!response.ok)throw Error(response.status===403?'Lifetime required':'Account request failed');return response.json()}
+export const resource=(id,lang,framework='prompt')=>memberRequest('/resources/'+encodeURIComponent(id)+'?lang='+lang+'&framework='+framework);
+membership.ready=(async()=>{try{const response=await fetch('/api/billing/public');if(!response.ok)return;const settings=await response.json();if(!settings.authReady)return;const {createClient}=await import('./auth-client.js');auth=createClient(settings.authURL,settings.authKey,{auth:{flowType:'pkce',storageKey:'adp-auth'}});const {data}=await auth.auth.getSession();user=data.session?.user||null;auth.auth.onAuthStateChange((_event,session)=>{user=session?.user||null;setTimeout(()=>void refresh(),0)});await refresh()}catch{/* Offline/local browsing remains available. */}})();

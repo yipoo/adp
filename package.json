@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "node tools/serve.mjs",
-    "check": "node --check src/app.js && node --check src/demos.js && node --check src/agent-templates.js && node --check src/locale.js && node --check src/preview.js && node tools/verify.mjs && node tools/check-sources.mjs",
+    "check": "node --check src/access.js && node --check src/comparison.js && node --check src/app.js && node --check src/demos.js && node --check src/agent-templates.js && node --check src/locale.js && node --check src/preview.js && node tools/verify.mjs && node tools/check-sources.mjs",
     "generate:sources": "node tools/generate-sources.mjs",
-    "prepare:runtime": "node tools/prepare-runtime-check.mjs"
+    "prepare:runtime": "node tools/prepare-runtime-check.mjs",
+    "build:vercel": "node tools/build-vercel.mjs",
+    "test:billing": "npm test --prefix billing"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.5.45",
@@ -17,5 +19,8 @@
     "react-dom": "^19.3.1",
     "vue": "^3.5.45"
   },
-  "description": "Prompt for Agents Design \u2014 bilingual Agent templates, prompts, and multi-framework source"
+  "description": "Prompt for Agents Design — bilingual Agent templates, prompts, and multi-framework source",
+  "engines": {
+    "node": "24.x"
+  }
 }

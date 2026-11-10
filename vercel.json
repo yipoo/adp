@@ -1,0 +1,1 @@
+{"$schema":"https://openapi.vercel.sh/vercel.json","framework":null,"installCommand":"npm ci && npm ci --prefix billing","buildCommand":"npm run build:vercel"}
