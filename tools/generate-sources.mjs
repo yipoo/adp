@@ -3,7 +3,7 @@ import {spawnSync} from 'node:child_process';
 import postcss from 'postcss';
 import {demoParts,demoDocument} from '../src/demos.js';
 const catalog=JSON.parse(await readFile(new URL('../data/catalog.json',import.meta.url)));
-const temporary=new URL('../.oil-ui/detent/source-input.json',import.meta.url);
+const temporary=new URL('../.oil-ui/source-check/source-input.json',import.meta.url);
 const inputs=[];
 for(const item of catalog)for(const lang of ['en','zh']){
 const p=demoParts(item,{lang});

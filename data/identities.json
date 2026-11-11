@@ -1,0 +1,158 @@
+[
+  {
+    "id": "prompt-composer",
+    "type": "components"
+  },
+  {
+    "id": "model-selector",
+    "type": "components"
+  },
+  {
+    "id": "voice-note",
+    "type": "components"
+  },
+  {
+    "id": "baseline-chart",
+    "type": "components"
+  },
+  {
+    "id": "file-upload",
+    "type": "components"
+  },
+  {
+    "id": "rewind-editor",
+    "type": "components"
+  },
+  {
+    "id": "action-popup",
+    "type": "components"
+  },
+  {
+    "id": "phrase-switch",
+    "type": "components"
+  },
+  {
+    "id": "live-checklist",
+    "type": "components"
+  },
+  {
+    "id": "halo-bands",
+    "type": "components"
+  },
+  {
+    "id": "goal-rings",
+    "type": "components"
+  },
+  {
+    "id": "diff-review",
+    "type": "components"
+  },
+  {
+    "id": "agent-workspace",
+    "type": "blocks"
+  },
+  {
+    "id": "analytics-overview",
+    "type": "blocks"
+  },
+  {
+    "id": "content-review",
+    "type": "blocks"
+  },
+  {
+    "id": "project-planning",
+    "type": "blocks"
+  },
+  {
+    "id": "pricing-section",
+    "type": "blocks"
+  },
+  {
+    "id": "halo-hero",
+    "type": "blocks"
+  },
+  {
+    "id": "agent-chat",
+    "type": "templates"
+  },
+  {
+    "id": "agent-research",
+    "type": "templates"
+  },
+  {
+    "id": "agent-workflow",
+    "type": "templates"
+  },
+  {
+    "id": "agent-approvals",
+    "type": "templates"
+  },
+  {
+    "id": "agent-knowledge",
+    "type": "templates"
+  },
+  {
+    "id": "agent-timeline",
+    "type": "blocks"
+  },
+  {
+    "id": "tool-call",
+    "type": "components"
+  },
+  {
+    "id": "agent-plan",
+    "type": "components"
+  },
+  {
+    "id": "tool-approval",
+    "type": "components"
+  },
+  {
+    "id": "source-citations",
+    "type": "components"
+  },
+  {
+    "id": "subagent-tasks",
+    "type": "components"
+  },
+  {
+    "id": "agent-retry",
+    "type": "components"
+  },
+  {
+    "id": "agent-checkpoint",
+    "type": "components"
+  },
+  {
+    "id": "context-usage",
+    "type": "components"
+  },
+  {
+    "id": "trace-waterfall",
+    "type": "blocks"
+  },
+  {
+    "id": "source-scope-picker",
+    "type": "components"
+  },
+  {
+    "id": "agent-command-search",
+    "type": "components"
+  },
+  {
+    "id": "run-notifications",
+    "type": "components"
+  },
+  {
+    "id": "execution-records",
+    "type": "blocks"
+  },
+  {
+    "id": "task-inspector",
+    "type": "components"
+  },
+  {
+    "id": "agent-preferences",
+    "type": "blocks"
+  }
+]

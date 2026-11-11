@@ -4,7 +4,7 @@ English · [简体中文](README.md)
 
 An interactive design library for AI Agent products: considered components, complete application templates, design prompts, and copyable source.
 
-**33 designs · 5 Agent templates · English & Chinese · Next.js / React, Vue 3, HTML**
+**39 designs · 5 Agent templates · English & Chinese · Next.js / React, Vue 3, HTML**
 
 ## Run locally
 
@@ -12,12 +12,12 @@ An interactive design library for AI Agent products: considered components, comp
 npm run dev
 ```
 
-Open http://127.0.0.1:4180 . Node.js 22+; no installation or AI credentials needed to browse. Set `PORT=4181` to change the port.
+Install with `npm ci` and `npm ci --prefix billing`, then open http://127.0.0.1:4180/en/ . The original workspace lives at `/studio/`. Node.js 24+; no model credentials are needed for browsing or demos. Set `PORT=4181` to change the port.
 
 ## Library
 
-- **20 Components:** the original 12, plus tool calls, plan queue, approval gate, citations, subagent tasks, error recovery, checkpoints, and context usage.
-- **8 Blocks:** agent workspace, analytics, content review, project planning, pricing, hero, Agent execution timeline, and trace waterfall.
+- **24 Components:** the original 12, plus tool calls, plan queue, approval gate, citations, subagent tasks, error recovery, checkpoints, and context usage.
+- **10 Blocks:** agent workspace, analytics, content review, project planning, pricing, hero, Agent execution timeline, and trace waterfall.
 - **5 Templates:** conversations, research, workflow console, human-in-the-loop approvals, and knowledge workspace.
 
 Agent templates include navigation, projects, a header, primary content, context, and working local interactions. Desktop uses three columns; tablet collapses context; mobile uses a main column with navigation and context drawers. Open the full preview or select Desktop 1440 / Tablet 768 / Mobile 390.
@@ -26,7 +26,7 @@ Free includes demos, responsive previews, search, favorites, and Free-design pro
 
 ## Agent Timeline
 
-Select **Agent Timeline** under Components or Blocks. The 10 new Free designs include bilingual demos, prompts, and React / Vue / HTML source. Their detail pages include public interaction references; see [scope, sources, and validation](docs/agent-timeline-references.md).
+Select **Agent Timeline** under Components or Blocks. The 10 new Free designs include bilingual demos, prompts, and React / Vue / HTML source. See [scope and validation](docs/agent-timeline-references.md).
 
 These patterns display observable events and public task summaries. Advancement, approval, retry, compaction and restoration affect only local preview state. Connect application services for real execution and persistence.
 
@@ -44,9 +44,9 @@ Open a design → **Source code** → select a framework → copy or download:
 | Vue 3 | `.vue` | Import the single-file component into an existing Vue project |
 | HTML / CSS / JS | `index.html` | Open the self-contained file directly |
 
-All 198 files live under `sources/<id>/<en|zh>/`. They contain markup, CSS, and working behavior. React uses JSX and lifecycle-managed DOM interactions; Vue uses a native template and script setup. No iframe wrappers or runtime eval in the framework exports. Listeners and timers are cleaned up when unmounted.
+All 234 files live under `sources/<id>/<en|zh>/`. They contain markup, CSS, and working behavior. React uses JSX and lifecycle-managed DOM interactions; Vue uses a native template and script setup. No iframe wrappers or runtime eval in the framework exports. Listeners and timers are cleaned up when unmounted.
 
-The source has no external font, image, CDN, or UI-library dependencies. Styles are namespaced per design and can coexist with Tailwind CSS and shadcn/ui. These are not Tailwind-specific exports or a shadcn registry. Check integration against your project's existing resets and design system.
+The source has no external font, image, CDN, or UI-library dependencies. Styles are namespaced per design. Check integration against your project's existing resets and design system.
 
 Templates emit a bubbling `adp-navigate` event with `event.detail.kind`: `chat`, `research`, `workflow`, `inbox`, or `knowledge`. Connect this event to your application's router. The standalone ADP preview already navigates between the five pages.
 
@@ -86,4 +86,12 @@ Checks cover bilingual content, tiers, prompt completeness, React JSX compilatio
 
 ## Reference
 
-Inspired by the presentation and live-preview approach of [Detent](https://detentui.com/). All source and prompts are original; no paid source, brand assets, or screenshots are copied. Framework guidance: [Next.js client components](https://nextjs.org/docs/app/api-reference/directives/use-client) and [Vue lifecycle hooks](https://vuejs.org/api/composition-api-lifecycle.html).
+All source and prompts are independently implemented. See the setup instructions included with each source file.
+
+## Agent controls
+
+Source scope, command search and notifications are Free. Execution records, task inspection and preferences are Pro under the existing Lifetime entitlement. All six include bilingual demos and React / Vue / HTML source. See [reference and integration notes](docs/interface-patterns.md).
+
+## Searchable content pages
+
+39 designs have 78 bilingual detail pages and 106 indexable URLs including home, category and type pages. Default home pages retain the original workspace UI with server-generated titles, default cards and real links; JavaScript enhances the same HTML with search, favorites and previews. Detail articles work without JavaScript and load demos on demand. Run `npm run check:seo` and read the [content architecture and editing workflow](docs/seo-architecture.md).

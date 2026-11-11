@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ai-conversations",
+    "zh": "AI 与对话",
+    "en": "AI & conversations",
+    "descriptionZh": "组织输入、模型选择与语音节奏，建立清楚的对话入口。",
+    "descriptionEn": "Organize input, model selection and voice rhythm into a clear conversation entry."
+  },
+  {
+    "id": "data-charts",
+    "zh": "数据与图表",
+    "en": "Data & charts",
+    "descriptionZh": "用可操作的图表与进度表达数据变化。",
+    "descriptionEn": "Explore change through interactive charts and progress indicators."
+  },
+  {
+    "id": "inputs-controls",
+    "zh": "输入与操作",
+    "en": "Inputs & controls",
+    "descriptionZh": "为文件、编辑、快捷操作与任务选择提供明确反馈。",
+    "descriptionEn": "Provide explicit feedback for files, editing, actions and task selection."
+  },
+  {
+    "id": "brand-display",
+    "zh": "品牌与展示",
+    "en": "Brand & display",
+    "descriptionZh": "通过光线、文案和方案结构组织产品展示。",
+    "descriptionEn": "Build product presentation around light, copy and clear plan structure."
+  },
+  {
+    "id": "agent-workspace",
+    "zh": "AI 工作区",
+    "en": "Agent workspace",
+    "descriptionZh": "将对话、模型与工作上下文组合为工作区块。",
+    "descriptionEn": "Combine conversation, model choices and working context into one block."
+  },
+  {
+    "id": "data-workspace",
+    "zh": "数据工作区",
+    "en": "Data workspace",
+    "descriptionZh": "把趋势与目标放在同一个可读的数据工作区。",
+    "descriptionEn": "Read trends and goals together in one data workspace."
+  },
+  {
+    "id": "productivity",
+    "zh": "效率工具",
+    "en": "Productivity",
+    "descriptionZh": "将任务、资料与内容审阅组织为可操作的工作流程。",
+    "descriptionEn": "Organize tasks, material and content review into actionable workflows."
+  },
+  {
+    "id": "agent-templates",
+    "zh": "Agent 模板",
+    "en": "Agent templates",
+    "descriptionZh": "完整的 Agent 页面布局，覆盖对话、研究、工作流、审批与知识。",
+    "descriptionEn": "Complete Agent layouts for conversations, research, workflows, approvals and knowledge."
+  },
+  {
+    "id": "agent-timeline",
+    "zh": "Agent Timeline",
+    "en": "Agent Timeline",
+    "descriptionZh": "让可观察的任务事件、工具调用与恢复过程保持清楚。",
+    "descriptionEn": "Keep observable task events, tool calls and recovery steps readable."
+  },
+  {
+    "id": "agent-controls",
+    "zh": "Agent 控件",
+    "en": "Agent controls",
+    "descriptionZh": "为资料选择、命令、通知与任务详情提供可组合控件。",
+    "descriptionEn": "Composable controls for source selection, commands, notifications and task details."
+  }
+]

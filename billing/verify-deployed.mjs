@@ -14,7 +14,7 @@ const admin=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_SECRET_KE
 const auth=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,autoRefreshToken:false}});
 const otherAuth=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,autoRefreshToken:false}});
 const store=openPostgres(process.env.DATABASE_URL);const report={sandbox:true,deployedBase:base};const users=[],requestKeys=[];let checkout,customer,user,token;
-const folder=new URL('../.oil-ui/detent/',import.meta.url);await mkdir(folder,{recursive:true});
+const folder=new URL('../.oil-ui/source-check/',import.meta.url);await mkdir(folder,{recursive:true});
 async function newUser(client){const email='adp-check-'+randomUUID()+'@example.invalid',password=randomBytes(32).toString('base64url');const created=await admin.auth.admin.createUser({email,password,email_confirm:true,app_metadata:{adp_verification:true}});assert.ifError(created.error);users.push(created.data.user.id);const signed=await client.auth.signInWithPassword({email,password});assert.ifError(signed.error);return{user:created.data.user,token:signed.data.session.access_token}}
 async function api(route,options={},jwt=token){return fetch(base+'/api/billing'+route,{...options,headers:{...(jwt?{Authorization:'Bearer '+jwt}:{}),...options.headers}})}
 try{

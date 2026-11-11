@@ -4,7 +4,7 @@
 
 为 AI Agent 产品设计的可交互 UI、完整页面模板、设计 prompt 和多框架源码库。
 
-**33 项设计 · 5 套 Agent 模板 · 中英文 · Next.js / React、Vue 3、HTML**
+**39 项设计 · 5 套 Agent 模板 · 中英文 · Next.js / React、Vue 3、HTML**
 
 ## 本地运行
 
@@ -12,14 +12,14 @@
 npm run dev
 ```
 
-打开 http://127.0.0.1:4180 。浏览网站不需要安装依赖，不需要模型 API Key。Node.js 22+；可用 `PORT=4181 npm run dev` 修改端口。
+先运行 `npm ci` 和 `npm ci --prefix billing`，再运行开发命令。打开 http://127.0.0.1:4180/zh/，工作台位于 `/studio/`。浏览与演示不需要模型 API Key。Node.js 24+；可用 `PORT=4181 npm run dev` 修改端口。
 
 ## 内容
 
 | 类型 | 数量 | 内容 |
 | --- | --- | --- |
-| Components | 20 | 原有 12 项，以及工具调用、计划队列、操作审批、来源引用、子任务、重试、检查点、上下文用量 |
-| Blocks | 8 | Agent 工作台、数据概览、内容审阅、项目规划、方案对比、品牌首屏、Agent 执行时间线、耗时瀑布图 |
+| Components | 24 | 原有 12 项，以及工具调用、计划队列、操作审批、来源引用、子任务、重试、检查点、上下文用量 |
+| Blocks | 10 | Agent 工作台、数据概览、内容审阅、项目规划、方案对比、品牌首屏、Agent 执行时间线、耗时瀑布图 |
 | Templates | 5 | Agent 对话、深度研究、工作流控制台、人工审批、知识库 |
 
 模板是带有导航、项目、页头、主内容、上下文、交互反馈的页面。桌面三栏；平板收起上下文；手机使用单列和可开关的导航、上下文抽屉。所有模板默认完整展示，可以打开独立预览并切换 Desktop 1440 / Tablet 768 / Mobile 390。
@@ -28,7 +28,7 @@ Free 包含全部 demo、设备预览、搜索、收藏，以及 Free 条目的 
 
 ## Agent Timeline
 
-在 Components 或 Blocks 中选择 **Agent Timeline** 分类。新增 10 项均为 Free，提供中英文交互演示、设计 prompt 和 React / Vue / HTML 源码。详情页附公开交互参考链接；来源、收录范围及验证说明见 [Agent Timeline 参考说明](docs/agent-timeline-references.md)。
+在 Components 或 Blocks 中选择 **Agent Timeline** 分类。新增 10 项均为 Free，提供中英文交互演示、设计 prompt 和 React / Vue / HTML 源码。收录范围及验证说明见 [Agent Timeline 参考说明](docs/agent-timeline-references.md)。
 
 这些组件展示可观察的任务事件与公开摘要。推进、审批、重试、压缩和恢复仅影响本地预览；真实运行与持久化由接入方服务负责。
 
@@ -49,9 +49,9 @@ Free 包含全部 demo、设备预览、搜索、收藏，以及 Free 条目的 
 | Vue 3 | `.vue` | 复制到现有 Vue 项目中，直接导入组件 |
 | HTML / CSS / JS | `index.html` | 独立文件，可直接打开 |
 
-源文件位于 `sources/<id>/<en|zh>/`。33 项 × 2 种语言 × 3 种实现，共 198 个文件。每个文件包含布局、样式和交互实现；React 使用 JSX、`useRef` / `useEffect`，Vue 使用原生 template、`script setup` 及生命周期清理；不会把整个 demo 塞进 iframe，也不使用运行时 eval。
+源文件位于 `sources/<id>/<en|zh>/`。39 项 × 2 种语言 × 3 种实现，共 234 个文件。每个文件包含布局、样式和交互实现；React 使用 JSX、`useRef` / `useEffect`，Vue 使用原生 template、`script setup` 及生命周期清理；不会把整个 demo 塞进 iframe，也不使用运行时 eval。
 
-源码不依赖外部字体、图片、CDN 或 UI 库。样式按设计 id 隔离，可与 Tailwind CSS、shadcn/ui 项目共存；目前不是单独的 shadcn registry 或 Tailwind 专用导出。复制到使用 Tailwind Preflight 的项目后，仍应结合项目样式做集成验收。
+源码不依赖外部字体、图片、CDN 或 UI 库。样式按设计 id 隔离，可接入现有项目；集成后仍应结合项目的全局样式做验收。
 
 模板导航触发冒泡的 `adp-navigate` 自定义事件，`event.detail.kind` 为 `chat / research / workflow / inbox / knowledge`。在自己的应用中监听该事件连接路由；ADP 的独立预览已支持这五个页面互相切换。
 
@@ -109,4 +109,12 @@ npm run prepare:runtime
 
 ## 参考
 
-视觉与浏览体验参考 [Detent](https://detentui.com/)，所有演示、源码、prompt 和素材均为独立编写，未复制其付费源码或品牌素材。框架接入参考 [Next.js client components](https://nextjs.org/docs/app/api-reference/directives/use-client) 与 [Vue lifecycle hooks](https://vuejs.org/api/composition-api-lifecycle.html)。
+演示、源码、prompt 和素材均为独立编写。框架接入方式见各源码文件中的安装说明。
+
+## Agent 控件
+
+新增 6 项：资料范围多选、命令搜索、任务通知队列为 Free；执行记录筛选表、任务详情抽屉、Agent 设置面板为 Pro，由现有 Lifetime 权益解锁。均提供中英文演示与 React / Vue / HTML 源码。参考与接入边界见 [界面模式收录说明](docs/interface-patterns.md)。
+
+## 内容页面与搜索
+
+39 项设计拥有 78 个双语详情页，首页、分类与类型页共形成 106 个可索引网址。默认首页沿用工作台交互，构建时直接输出标题、默认列表与真实链接；JavaScript 在同一页面增强搜索、收藏与预览。独立详情正文不依赖脚本，演示按需加载，`/studio/` 保留兼容入口。运行 `npm run check:seo` 检查页面、链接与权限；内容来源、路由和维护方式见 [内容站架构](docs/seo-architecture.md)。

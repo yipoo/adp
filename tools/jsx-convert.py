@@ -14,6 +14,7 @@ class JSX(HTMLParser):
                     if ':' not in part:continue
                     k,v=part.split(':',1);k=k.strip();k=k if k.startswith('--') else re.sub(r'-([a-z])',lambda m:m[1].upper(),k);styles[k]=v.strip()
                 out+=' style={'+json.dumps(styles,ensure_ascii=False)+'}'
+            elif key=='checked' and tag=='input':out+=' defaultChecked={'+('true' if value is None or value in ('','checked','true') else 'false')+'}'
             elif value is None:out+=' '+key+'={true}'
             elif key in ('value','checked') and tag in ('input','textarea'):
                 out+=' '+('defaultValue' if key=='value' else 'defaultChecked')+'={'+json.dumps(value,ensure_ascii=False)+'}'

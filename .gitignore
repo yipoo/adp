@@ -9,3 +9,5 @@ billing/node_modules/
 !*.env.example
 private/
 .vercel
+
+dist/
